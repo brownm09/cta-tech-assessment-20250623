@@ -2,7 +2,20 @@ import { useState } from 'react';
 import './App.css';
 
 const API_FIELDS = [
-  'status', 'message', 'continent', 'continentCode', 'country', 'countryCode', 'region', 'regionName', 'city', 'district', 'zip', 'lat', 'lon', 'timezone', 'offset', 'currency', 'isp', 'org', 'as', 'asname', 'reverse', 'mobile', 'proxy', 'hosting', 'query'
+  'status',
+  'country',
+  'countryCode',
+  'region',
+  'regionName',
+  'city',
+  'zip',
+  'lat',
+  'lon',
+  'timezone',
+  'isp',
+  'org',
+  'as',
+  'query'
 ];
 
 function App() {
@@ -18,7 +31,7 @@ function App() {
       }
       const data = await response.json();
       console.log(data);
-      document.getElementById('fieldValue').innerText = data[field] || 'Field not found';
+      document.getElementById('fieldValue').innerText = data[`${field}`] || 'Field not found';
       // alert(`Data fetched successfully for IP: ${ip}`);
     } catch (error) {
       console.error('Fetch error:', error);

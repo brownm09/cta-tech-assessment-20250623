@@ -87,6 +87,11 @@ The problem asks to create a UX. I need to make the following considerations:
   - I need `onChange` in the IP field, too.
   - It's doing...something now. The field names aren't necessarily triggering the right data to appear, though.
 
+6. Implementation, Pt. 3
+
+- I needed to stringify the JSON field.
+- Now, I see there are some extra parameters in this API fields list...wonder where Copilot got that from. My bad for neglecting to fully check that input from it.
+
 ---
 
 *This project was generated using Vite and React.*
