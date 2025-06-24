@@ -95,6 +95,17 @@ The problem asks to create a UX. I need to make the following considerations:
 
 7. Wrap-up and further discussion
 
+- My GitHub Copilot commands are in `copilot-instructions.md`.
+- Given more time, I would:
+  - Update my tests (probably could have done that with Copilot).
+  - Style the UI differently: remove inline styles and place them elsewhere for consistency (or use with a design system/component library).
+  - Provide error messages when the API fails to respond appropriately or when a private IP is given (ex. 192.168.1.1).
+  - Ensure the API is only triggered when needed (new IP address), rather than trigger every time a new field is selected.
+  - Limit the number of requests the user can send per minute? (Probably unnecessary, but a consideration for real APIs.)
+  - Make more of the code idiomatic in the React style (instead of that `document.getElementById()` stuff).
+  - TypeScript everywhere!
+
+8. Thanks for reviewing this! I appreciate your time and energy.
 
 ---
 
