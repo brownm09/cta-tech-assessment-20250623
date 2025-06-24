@@ -79,6 +79,13 @@ The problem asks to create a UX. I need to make the following considerations:
 - I need
   - a function (onSubmit) to fetch the data.
   - updated tests?
+- Looks like I misread the instructions--I need to update the response when the dropdown is changed. Should the dropdown be blank (and disabled) when there's no valid IP address?
+  - That suggests I need an `onChange` attribute in the dropdown.
+  - Oh, weird. If the IP text area is empty, I guess it returns my own IP. I'll fix that later?
+  - Perhaps I should have an empty default value in the dropdown.
+  - I still need to process the returned JSON.
+  - I need `onChange` in the IP field, too.
+  - It's doing...something now. The field names aren't necessarily triggering the right data to appear, though.
 
 ---
 

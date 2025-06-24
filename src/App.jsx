@@ -7,9 +7,9 @@ const API_FIELDS = [
 
 function App() {
   const [ip, setIp] = useState('');
+  const [field, setField] = useState('');
 
-  const handleFetch = async (e) => {
-    e.preventDefault();
+  const handleFetch = async () => {
     console.log(`Fetching data for IP: ${ip}`);
     try {
       const response = await fetch(`http://ip-api.com/json/${ip}`);
@@ -18,7 +18,8 @@ function App() {
       }
       const data = await response.json();
       console.log(data);
-      alert(`Data fetched successfully for IP: ${ip}`);
+      document.getElementById('fieldValue').innerText = data[field] || 'Field not found';
+      // alert(`Data fetched successfully for IP: ${ip}`);
     } catch (error) {
       console.error('Fetch error:', error);
     }
@@ -26,14 +27,31 @@ function App() {
 
   return (
     <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-      <h1>API UX Exercise</h1>
+      <div>
+        <h1>API UX Exercise</h1>
+      </div>
+      <div>
       <input type="text" placeholder="Enter IP address" value={ip} onChange={e => setIp(e.target.value)} />
-      <select>
+      </div>
+      <div>
+
+      <select onChange={e => {
+        setField(e.target.value);
+        document.getElementById('chosenField').innerText = `Chosen Field: ${e.target.value}`;
+        document.getElementById('fieldValue').innerText = '';
+        handleFetch();
+      }}>
+        <option value="">Select a field</option>
         {API_FIELDS.map(field => (
           <option key={field} value={field}>{field}</option>
         ))}
       </select>
-      <button onClick={handleFetch}>Fetch</button>
+        </div>
+<div>
+<p id="chosenField"></p>
+<p id="fieldValue"></p>
+</div>
+      {/* <button onClick={handleFetch}>Fetch</button> */}
     </div>
   );
 }
