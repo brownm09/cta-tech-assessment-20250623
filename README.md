@@ -4,8 +4,6 @@ This project is a simple React application created with Vite. It displays 'Hello
 
 ## Setup
 
-Here are the exact commands you typed into the chat for this project:
-
 1. ```bash
 
 npx create-vite@latest . --template react
@@ -39,6 +37,29 @@ npm run build
 - `src/` - Source code
 - `public/` - Static assets
 - `index.html` - Main HTML file
+
+## Implementation Steps
+
+1. Assess the problem.
+
+The problem asks to create a UX. I need to make the following considerations:
+
+- Identify the requirements: UI (text input and dropdown), function to consume the public API, response handler.
+
+1. Choose a technology with which to solve the problem:
+
+- I've chosen `React.js` because it is in vogue and assumed to be understood by reviewers.
+
+1. Design a solution:
+
+- I need to fetch data; given the problem statement, I can't necessarily (pre)fetch it on page load. Do I need to cache it? Probably not.
+- Where do I split my code? The bundle for this UX isn't going to be very big, but if the app were to be extended, I'd need to consider it.
+
+1. Consider extra requirements:
+
+- Is this API rate-limited?
+- Should I limit the number of times a user can submit a request to the API?
+- How can I make the code more maintainable? Should I add linters or ask Copilot to assess the styling?
 
 ---
 
