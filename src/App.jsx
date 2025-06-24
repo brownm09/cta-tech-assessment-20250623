@@ -48,13 +48,15 @@ function App() {
       </div>
       <div>
 
-      <select onChange={e => {
+      <select 
+        disabled={!/^(\d{1,3}\.){3}\d{1,3}$/.test(ip)}
+        onChange={e => {
         setField(e.target.value);
         document.getElementById('chosenField').innerText = `Chosen Field: ${e.target.value}`;
         document.getElementById('fieldValue').innerText = '';
         handleFetch();
       }}>
-        <option value="">Select a field</option>
+        {/* <option value="">Select a field</option> */}
         {API_FIELDS.map(field => (
           <option key={field} value={field}>{field}</option>
         ))}

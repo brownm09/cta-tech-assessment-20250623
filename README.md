@@ -53,7 +53,7 @@ The problem asks to create a UX. I need to make the following considerations:
 3. Design a solution:
 
 - I need to fetch data; given the problem statement, I can't necessarily (pre)fetch it on page load. Do I need to cache it? Probably not.
-- Where do I split my code? The bundle for this UX isn't going to be very big, but if the app were to be extended, I'd need to consider it. For now, I'll split the code between `component` and `logic` for simplicity.
+- Where do I split my code? The bundle for this UX isn't going to be very big, but if the app were to be extended, I'd need to consider it.
 
 4. Consider extra requirements:
 
@@ -91,6 +91,10 @@ The problem asks to create a UX. I need to make the following considerations:
 
 - I needed to stringify the JSON field.
 - Now, I see there are some extra parameters in this API fields list...wonder where Copilot got that from. My bad for neglecting to fully check that input from it.
+- Ah, the "empty" option in my list was causing an off-by-one error somewhere in the evaluation; removing it made it work regularly.
+
+7. Wrap-up and further discussion
+
 
 ---
 
