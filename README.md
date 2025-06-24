@@ -62,7 +62,7 @@ The problem asks to create a UX. I need to make the following considerations:
 - How can I make the code more maintainable? Should I add linters or ask Copilot to assess the styling?
 - I added a test.
 
-5. Implementation
+5. Implementation, Pt. 1
 
 - I need:
   - a text element for the user to type the IP
@@ -74,6 +74,12 @@ The problem asks to create a UX. I need to make the following considerations:
   - styles?
   - disable the button if the IP isn't formatted correctly?
   
+6. Implementation, Pt. 2
+
+- I need
+  - a function (onSubmit) to fetch the data.
+  - updated tests?
+
 ---
 
 *This project was generated using Vite and React.*

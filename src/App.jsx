@@ -7,6 +7,23 @@ const API_FIELDS = [
 
 function App() {
   const [ip, setIp] = useState('');
+
+  const handleFetch = async (e) => {
+    e.preventDefault();
+    console.log(`Fetching data for IP: ${ip}`);
+    try {
+      const response = await fetch(`http://ip-api.com/json/${ip}`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      console.log(data);
+      alert(`Data fetched successfully for IP: ${ip}`);
+    } catch (error) {
+      console.error('Fetch error:', error);
+    }
+  };
+
   return (
     <div style={{ textAlign: 'center', marginTop: '2rem' }}>
       <h1>API UX Exercise</h1>
@@ -16,7 +33,7 @@ function App() {
           <option key={field} value={field}>{field}</option>
         ))}
       </select>
-      <button>Fetch</button>
+      <button onClick={handleFetch}>Fetch</button>
     </div>
   );
 }
